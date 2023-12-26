@@ -1,0 +1,38 @@
+{% extends "layout/base.html" %}
+
+{% block 'title'%} Inicio {% endblock %}
+
+{% block 'content' %}
+<div class="text-center mt-5">
+  <h1>Vienbenido a tu gestor de contrasenias</h1>  
+
+  <div class="container text-start mt-5 border border-info-subtle rounded p-5">
+  <form action="{% url "password" %}">
+    <label for="largo">Seleciona la longitud de la password</label>
+    <select class="form-select bg-info-subtle" aria-label="Default select example" name="largo" id="largo">
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+
+    <label class="form-check-label mt-2" for="uppercase">Incluir mayuscular</label>
+    <input class="form-check-input d-block" type="checkbox" value="uppercase" name="uppercase" id="uppercase">
+
+    <label class="form-check-label mt-2" for="especiales">Incluir Caracteres Especiales</label>
+    <input class="form-check-input d-block" type="checkbox" value="especiales" name="especiales" id="especiales">
+
+    <label class="form-check-label mt-2" for="numero">Incluir Numeros</label>
+    <input class="form-check-input d-block" type="checkbox" value="numero" name="numero" id="numero">
+    
+    <button class="btn bg-info-subtle text-black mt-4" type="submit">Generar Password</button>
+  </form>
+</div>
+
+</div>
+{% endblock %}
